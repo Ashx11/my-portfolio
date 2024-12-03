@@ -1,0 +1,21 @@
+@keyframes fade {
+  0% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade {
+  animation: fade 0.5s ease-in-out;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#about {
+  scroll-margin-top: 80px; /* Adjust based on your navbar height */
+}
