@@ -31,7 +31,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className={`relative bg-white py-20 px-4 transition-all duration-500 scroll-margin-top-20 ${
+      className={`relative bg-white py-16 px-4 transition-all duration-500 scroll-margin-top-20 ${
         animateBg ? "bg-opacity-90" : "bg-opacity-100"
       }`}
     >
@@ -112,6 +112,18 @@ const About: React.FC = () => {
         <blockquote className="text-2xl font-bold italic text-gray-800 transition-opacity duration-1000">
           "{reasons[currentReason]}"
         </blockquote>
+
+        {/* View My CV Button */}
+        <div className="mt-10">
+          <a
+            href="https://drive.google.com/file/d/1SlANpTi-47u7P6ejcfH7mbtuJLurW_9Z/view?usp=sharing" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-colors"
+          >
+            View My CV
+          </a>
+        </div>
       </div>
     </section>
   );
