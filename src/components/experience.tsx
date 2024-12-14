@@ -19,9 +19,9 @@ const experiences = [
 
 const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 bg-gray-200">
+    <section id="experience" className="py-12 bg-gray-200"> {/* Reduced py-20 to py-12 */}
       <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-10">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8"> {/* Reduced mb-10 to mb-8 */}
           Experience
         </h1>
         <div className="space-y-8">

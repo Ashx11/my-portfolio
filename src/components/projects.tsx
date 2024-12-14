@@ -47,9 +47,9 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-100">
+    <section id="projects" className="py-12 bg-gray-100"> {/* Reduced py-20 to py-12 */}
       <div className="container mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8"> {/* Reduced margin-bottom */}
           Projects
         </h1>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

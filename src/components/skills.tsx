@@ -6,17 +6,32 @@ type Skill = {
   level: number;
 };
 
-const skills: Record<"Back-End" | "Artificial Intelligence" | "Front-End" | "Other Skills", Skill[]> = {
-  "Back-End": [
+const skills: Record<
+  "Programming Languages" | "Back-End" | "Front-End" | "Artificial Intelligence" | "DevOps & Tools" | "Other Skills",
+  Skill[]
+> = {
+  "Programming Languages": [
     { name: "Java", level: 80 },
     { name: "Python", level: 80 },
     { name: "SQL", level: 75 },
     { name: "C#", level: 70 },
+    { name: "JavaScript/TypeScript", level: 85 },
+  ],
+  "Back-End": [
     { name: "Spring Boot", level: 70 },
-    { name: "REST APIs", level: 80 },
-    { name: "Docker", level: 80 },
-    { name: "AWS", level: 60 },
-    { name: "Jenkins", level: 60 },
+    { name: "Node.js", level: 85 },
+    { name: "API Development (REST, FastAPI)", level: 80 },
+    { name: "Express.js", level: 80 },
+    { name: "SQL (MySQL, PostgreSQL)", level: 80 },
+    { name: "NoSQL (MongoDB)", level: 80 },
+  ],
+  "Front-End": [
+    { name: "React", level: 85 },
+    { name: "Angular", level: 75 },
+    { name: "Bootstrap & Tailwind CSS", level: 85 },
+    { name: "HTML & CSS", level: 95 },
+    { name: "JavaScript", level: 80 },
+    { name: "Webpack/Vite", level: 75 },
   ],
   "Artificial Intelligence": [
     { name: "PyTorch", level: 80 },
@@ -24,26 +39,22 @@ const skills: Record<"Back-End" | "Artificial Intelligence" | "Front-End" | "Oth
     { name: "NumPy", level: 90 },
     { name: "Pandas", level: 85 },
     { name: "OpenCV", level: 70 },
-    { name: "Apache Spark", level: 65 },
-    { name: "Hadoop", level: 60 },
     { name: "MATLAB", level: 80 },
   ],
-  "Front-End": [
-    { name: "React", level: 85 },
-    { name: "Angular", level: 75 },
-    { name: "Bootstrap", level: 85 },
-    { name: "HTML", level: 95 },
-    { name: "CSS", level: 85 },
-    { name: "JavaScript", level: 80 },
+  "DevOps & Tools": [
+    { name: "Docker", level: 80 },
+    { name: "Kubernetes", level: 70 },
+    { name: "Jenkins", level: 60 },
+    { name: "Postman", level: 75 },
   ],
   "Other Skills": [
-    { name: "Git", level: 85 },
+    { name: "Version Control (Git, GitLab)", level: 85 },
     { name: "CI/CD", level: 80 },
     { name: "Linux", level: 75 },
-    { name: "UI/UX", level: 85 },
-    { name: "OS", level: 75 }
+    { name: "OS (Windows, macOS)", level: 80 },
   ],
 };
+
 
 const Skills: React.FC = () => {
   return (
