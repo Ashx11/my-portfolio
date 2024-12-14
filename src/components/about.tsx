@@ -24,10 +24,10 @@ const About: React.FC = () => {
     setAnimateBg(true);
     const interval = setInterval(() => {
       setCurrentReason((prev) => (prev + 1) % reasons.length);
-    }, 5000); // Change every 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
-  }, []);
-
+  }, [reasons.length]);
+  
   return (
     <section
       id="about"
