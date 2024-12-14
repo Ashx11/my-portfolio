@@ -3,8 +3,20 @@ import React, { useState } from "react";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Force smooth scrolling to a section
+  const scrollToSection = (id: string) => {
+    setIsOpen(false); // Close menu if open
+    const section = document.getElementById(id);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 50, // Adjust for navbar height
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md ">
       <div className="container mx-auto flex flex-wrap justify-between items-center px-4 py-3">
         {/* Burger Menu Button */}
         <button
@@ -23,44 +35,44 @@ const Navbar: React.FC = () => {
           } md:flex md:flex-row md:space-x-8 md:items-center md:justify-center md:w-full`}
         >
           <li>
-            <a
-              href="#about"
-              className="text-gray-800 hover:text-black transition duration-300 py-2"
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-800 hover:text-black transition duration-300 py-2 focus:outline-none"
             >
               About
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#skills"
-              className="text-gray-800 hover:text-black transition duration-300 py-2"
+            <button
+              onClick={() => scrollToSection("skills")}
+              className="text-gray-800 hover:text-black transition duration-300 py-2 focus:outline-none"
             >
               Skills
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#experience"
-              className="text-gray-800 hover:text-black transition duration-300 py-2"
+            <button
+              onClick={() => scrollToSection("experience")}
+              className="text-gray-800 hover:text-black transition duration-300 py-2 focus:outline-none"
             >
               Experience
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#projects"
-              className="text-gray-800 hover:text-black transition duration-300 py-2"
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-gray-800 hover:text-black transition duration-300 py-2 focus:outline-none"
             >
               Projects
-            </a>
+            </button>
           </li>
           <li>
-            <a
-              href="#contact"
-              className="text-gray-800 hover:text-black transition duration-300 py-2"
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-gray-800 hover:text-black transition duration-300 py-2 focus:outline-none"
             >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </div>

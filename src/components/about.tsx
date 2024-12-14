@@ -27,11 +27,19 @@ const About: React.FC = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, [reasons.length]);
-  
+
+  // A scroll function that does not depend on setIsOpen
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section
       id="about"
-      className={`relative bg-white py-16 px-4 transition-all duration-500 scroll-margin-top-20 ${
+      className={`relative bg-white py-16 px-4 transition-all duration-500 ${
         animateBg ? "bg-opacity-90" : "bg-opacity-100"
       }`}
     >
@@ -116,7 +124,7 @@ const About: React.FC = () => {
         {/* View My CV Button */}
         <div className="mt-10">
           <a
-            href="https://drive.google.com/file/d/1SlANpTi-47u7P6ejcfH7mbtuJLurW_9Z/view?usp=sharing" 
+            href="https://drive.google.com/file/d/1SlANpTi-47u7P6ejcfH7mbtuJLurW_9Z/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-colors"
@@ -124,6 +132,11 @@ const About: React.FC = () => {
             View My CV
           </a>
         </div>
+
+        {/* Example usage of scrollToSection (if desired) */}
+        {/* <button onClick={() => scrollToSection('skills')} className="mt-4 px-6 py-3 bg-gray-800 text-white rounded hover:bg-gray-900">
+          Go to Skills
+        </button> */}
       </div>
     </section>
   );

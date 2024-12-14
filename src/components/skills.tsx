@@ -1,6 +1,5 @@
 import React from "react";
 
-// Define the structure of the skills object explicitly
 type Skill = {
   name: string;
   level: number;
@@ -55,15 +54,13 @@ const skills: Record<
   ],
 };
 
-
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="bg-gray-100 py-10 px-4">
+    <section id="skills" className="bg-gray-100 py-10 px-4 ">
       <div className="container mx-auto max-w-7xl">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           My Skills
         </h2>
-        {/* Grid for skill categories */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {Object.keys(skills).map((category) => (
             <div
@@ -73,11 +70,9 @@ const Skills: React.FC = () => {
               <h3 className="text-xl font-semibold text-black mb-3">
                 {category}
               </h3>
-              {/* Subdivide into left and right columns */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {skills[category as keyof typeof skills].map((skill) => (
-                  <div key={skill.name} className="flex flex-col">
-                    {/* Skill Name and Level */}
+                {skills[category as keyof typeof skills].map((skill, index) => (
+                  <div key={`${skill.name}-${index}`} className="flex flex-col">
                     <div className="flex justify-between mb-1">
                       <span className="text-sm font-medium text-gray-800">
                         {skill.name}
@@ -86,27 +81,21 @@ const Skills: React.FC = () => {
                         {skill.level}%
                       </span>
                     </div>
-                    {/* Smaller Progress Bar with Animation */}
-                    <div className="w-full bg-gray-300 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="w-full bg-gray-300 rounded-full h-2 overflow-hidden"
+                    >
                       <div
                         className="bg-black h-2 rounded-full"
                         style={{
                           width: `${skill.level}%`,
-                          animation: `fill-${skill.level} 2s ease-in-out forwards`,
+                          transition: "width 2s ease-in-out",
                         }}
+                        role="progressbar"
+                        aria-valuenow={skill.level}
+                        aria-valuemin={0}
+                        aria-valuemax={100}
+                        aria-label={`Skill level for ${skill.name}: ${skill.level}%`}
                       ></div>
-                      <style>
-                        {`
-                          @keyframes fill-${skill.level} {
-                            from {
-                              width: 0%;
-                            }
-                            to {
-                              width: ${skill.level}%;
-                            }
-                          }
-                        `}
-                      </style>
                     </div>
                   </div>
                 ))}

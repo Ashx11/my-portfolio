@@ -20,12 +20,20 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Map the form data to what the EmailJS template expects
+    const templateParams = {
+      from_name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
     emailjs
       .send(
-        "service_jtf5ace", // Replace with your EmailJS service ID
-        "template_aytfzkj", // Replace with your EmailJS template ID
-        formData,
-        "CMTY78X7vVNxlai4Y" // Replace with your EmailJS public API key
+        "service_jtf5ace",   // Your EmailJS service ID
+        "template_aytfzkj",  // Your EmailJS template ID
+        templateParams,
+        "CMTY78X7vVNxlai4Y"  // Your EmailJS public API key
       )
       .then(() => {
         setStatus("Message sent successfully!");
@@ -96,6 +104,7 @@ const Contact: React.FC = () => {
               onChange={handleChange}
               placeholder="Subject"
               className="w-full p-3 bg-gray-100 text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              required
             />
           </div>
           <div className="flex flex-col items-start">
