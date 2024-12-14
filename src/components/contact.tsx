@@ -11,7 +11,9 @@ const Contact: React.FC = () => {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -39,8 +41,13 @@ const Contact: React.FC = () => {
       <div className="container mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center">
         <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
         <p className="text-lg mb-10">
-          Thank you for visiting my website. I would love to hear from you! Please fill out the form below, or{" "}
-          <a href="mailto:arshpreets425@gmail.com" className="text-black hover:text-purple-800 transition-colors">
+          Thank you for visiting my website. I would love to hear from you!
+          Please fill out the form below, or{" "}
+          <a
+            href="mailto:arshpreets425@gmail.com"
+            aria-label="Send an email to Arshpreet Singh"
+            className="text-black hover:text-purple-800 transition-colors"
+          >
             send me an email
           </a>
           . I'll get back to you as soon as possible.
@@ -57,7 +64,7 @@ const Contact: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your Name"
+              placeholder="Your name"
               className="w-full p-3 bg-gray-100 text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
@@ -72,7 +79,7 @@ const Contact: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Your Email"
+              placeholder="Your email"
               className="w-full p-3 bg-gray-100 text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
@@ -114,6 +121,17 @@ const Contact: React.FC = () => {
           </button>
         </form>
         {status && <p className="mt-4 text-sm text-gray-600">{status}</p>}
+        <footer className="mt-8 text-center text-sm text-gray-500">
+          <p>
+            © {new Date().getFullYear()} Arshpreet Singh | Designed by{" "}
+            <a
+              href="mailto:arshpreets425@gmail.com"
+              className="text-black hover:text-purple-800 transition-colors"
+            >
+              Arshpreet Singh
+            </a>
+          </p>
+        </footer>
       </div>
     </section>
   );
