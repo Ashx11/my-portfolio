@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ashx11.github.io/my-portfolio",
+  "homepage": "https://arshsingh.ca",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@sendgrid/mail": "^8.1.4",
