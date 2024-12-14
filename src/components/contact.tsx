@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
 
     emailjs
       .send(
-        "service_jtf5ace",   // Your EmailJS service ID
+        "service_yp4h13m",   // Your EmailJS service ID
         "template_aytfzkj",  // Your EmailJS template ID
         templateParams,
         "CMTY78X7vVNxlai4Y"  // Your EmailJS public API key
